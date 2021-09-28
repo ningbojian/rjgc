@@ -1,10 +1,15 @@
-- 👋 Hi, I’m @ningbojian
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+## 软件工程两人小组
 
-<!---
-ningbojian/ningbojian is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+
+
+### 组名：向风慕义
+
+姓名：安津毅   2019110278
+	
+| 姓名 |学号 |
+| ------- | ------- |
+|   安津毅      |  2019110278       |
+
+| 姓名 |学号 |
+| ------- | ------- |
+|   向怡然      |  2019110838       |
