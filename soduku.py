@@ -1,7 +1,7 @@
 import copy
-import time
 import tkinter as tk
 import tkinter.messagebox
+import os
 soduku = [[] for i in range(9)]
 
 #确定计算
@@ -293,21 +293,20 @@ def trial(total_value_range):
                     return False
 
 
-def jisuan():
-    t1 = time.time()
-    a = reduce_totalValueRange(soduku)
-    for i in a:
-        print(i)
-    for i in trial(a):
-        print(i)
 
-    #print("代码执行完毕，用时{}秒".format(round(time.time() - t1,2)))
+def jisuan():#输入进txt
+    f = open('out.txt', 'w')
+    a = reduce_totalValueRange(soduku)
+    for i in trial(a):
+        print (i,file=f)
+
+def print_result():
+    os.system('python sdresult.py')
 
 window = tk.Tk()
 window.title("欢迎使用数独计算器，空出为0")
-window.geometry('800x600')
+window.geometry('500x300')
 lab_1 = tk.Label(window, text="请输入9x9数字：").grid(row=0, column=0)
-
 E1 = tk.Entry(window,width=50)
 E1.insert(0,"请输入第一行九个数,空位以0代替")
 E2 = tk.Entry(window,width=50)
@@ -329,8 +328,8 @@ E9.insert(0,"")
 
 B1 = tk.Button(window, text="确定写入数据", command=confirm)
 B2 = tk.Button(window, text="清除", command=clear)
-B3 = tk.Button(window, text="计算结果", command=jisuan)
-
+B3 = tk.Button(window, text="计算", command=jisuan)
+B4 = tk.Button(window, text="显示结果", command=print_result)
 E1.grid(row=1,column=1)
 E2.grid(row=3,column=1)
 E3.grid(row=5,column=1)
@@ -340,16 +339,12 @@ E6.grid(row=11,column=1)
 E7.grid(row=13,column=1)
 E8.grid(row=15,column=1)
 E9.grid(row=17,column=1)
-lab_2 = tk.Label(window, text="原题目：").grid(row=25, column=0)
-lab_3 = tk.Label(window, text="补全数独：").grid(row=25, column=1)
 
-text1=tk.Text(window,width=50,height=20)
-text1.grid(row=30,column=0)
-text2=tk.Text(window,width=50,height=20)
-text2.grid(row=30,column=1)
+
 B1.grid(row=5,column=0)
 B2.grid(row=10,column=0)
 B3.grid(row=15,column=0)
+B4.grid(row=20,column=0)
 #if __name__ == '__main__':
 
 
